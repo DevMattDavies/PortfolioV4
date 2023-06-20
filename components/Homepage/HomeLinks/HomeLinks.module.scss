@@ -1,0 +1,35 @@
+@import "styles/_variables";
+@import "styles/_mixins";
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    align-items: flex-end;
+  }
+
+  &__link {
+    font-size: 7rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 100;
+    color: var(--font);
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 1rem;
+  }
+
+  &__aboutLink {
+    @include homeUnderline($about-gradient);
+  }
+
+  &__projectsLink {
+    @include homeUnderline($projects-gradient);
+  }
+
+  &__contactLink {
+    @include homeUnderline($contact-gradient);
+  }
+}

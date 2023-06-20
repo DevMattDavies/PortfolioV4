@@ -1,0 +1,48 @@
+:root {
+  --font: black;
+  --background: white;
+  --nav-background: black;
+}
+
+[data-theme="dark"] {
+  --font: white;
+  --background: black;
+  --nav-background: white;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("../public/fonts/recoleta.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("../public/fonts/oswald.ttf");
+  font-style: normal;
+}
+
+html {
+  font-size: calc(60% + 0.8vmin);
+  background-color: var(--background);
+}
+
+* {
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.inverted {
+  filter: invert(1);
+}
