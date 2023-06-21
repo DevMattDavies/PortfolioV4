@@ -16,6 +16,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    opacity: 0;
+    animation: fade-in 1s forwards;
   }
 
   &__titleContainer {
@@ -23,8 +25,14 @@
 
     @media screen and (min-width: $tablet) {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
       align-items: center;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
     }
   }
 

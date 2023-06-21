@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { Switch } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+// Custom MUI toggle theme
 const theme = createTheme({
   components: {
     MuiSwitch: {
@@ -36,6 +37,7 @@ const DarkModeToggle = (): ReactElement | null => {
     setTheme(currentTheme === "dark" ? "light" : "dark");
   };
 
+  // Stops hydration mismatch error
   if (!resolvedTheme) return null;
 
   return (
@@ -46,7 +48,7 @@ const DarkModeToggle = (): ReactElement | null => {
           src={"/images/sun.png"}
           alt={"sun"}
         />
-        <Switch onChange={toggleTheme} />
+        <Switch checked={resolvedTheme === "dark"} onChange={toggleTheme} />
         <img
           className={styles.toggle__moon}
           src={"/images/moon2.png"}
