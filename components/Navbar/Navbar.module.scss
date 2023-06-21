@@ -1,0 +1,26 @@
+@import "styles/_mixins";
+@import "styles/_variables";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--background);
+  padding: $desktop-padding;
+
+  &__link {
+    @include navLinks(3rem);
+  }
+
+  &__link__about {
+    @include navUnderline($about-gradient);
+  }
+
+  &__link__projects {
+    @include navUnderline($projects-gradient);
+  }
+
+  &__link__contact {
+    @include navUnderline($contact-gradient);
+  }
+}

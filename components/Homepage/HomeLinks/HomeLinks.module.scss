@@ -12,37 +12,18 @@
   }
 
   &__link {
-    font-size: 7rem;
-    font-family: "Oswald", sans-serif;
-    font-weight: 100;
-    color: var(--font);
-    text-transform: uppercase;
-    position: relative;
-    padding: 0 1rem;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: slideUp 0.5s forwards;
+    @include navLinks(7rem);
   }
 
   &__aboutLink {
     @include homeUnderline($about-gradient);
-    animation-delay: 0.5s;
   }
 
   &__projectsLink {
     @include homeUnderline($projects-gradient);
-    animation-delay: 1s;
   }
 
   &__contactLink {
     @include homeUnderline($contact-gradient);
-    animation-delay: 1.5s;
-  }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
