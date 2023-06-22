@@ -1,12 +1,15 @@
 import styles from "./Navbar.module.scss";
 import { ReactElement, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Cross as Hamburger } from "hamburger-react";
+import MobileNavLinks from "./MobileNavLinks";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 export const Navbar = (): ReactElement | null => {
   const router = useRouter();
   const currentPage = router.pathname;
   const [mounted, setMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigate = (url: string) => {
     router.push(url);
@@ -19,7 +22,7 @@ export const Navbar = (): ReactElement | null => {
 
   return (
     <div className={styles.nav}>
-      <nav>
+      <nav className={isMenuOpen ? "show" : ""}>
         <a className={styles.nav__link} onClick={() => navigate("/")}>
           Home
         </a>
@@ -48,6 +51,14 @@ export const Navbar = (): ReactElement | null => {
           Contact
         </a>
       </nav>
+      <button
+        className={styles.nav__hamburger}
+        onClick={() => {
+          setIsMenuOpen(true);
+        }}
+      >
+        <Hamburger />
+      </button>
       {mounted && <DarkModeToggle />}
     </div>
   );

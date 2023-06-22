@@ -9,6 +9,16 @@
   background-color: var(--background);
   height: $navbar-height;
   padding: $navbar-padding;
+  position: relative;
+
+  nav {
+    display: flex;
+    width: 100%;
+  }
+
+  &__hamburger {
+    display: none;
+  }
 
   &__link {
     @include navLinks(3rem);
@@ -24,5 +34,19 @@
 
   &__link__contact {
     @include navUnderline($contact-gradient);
+  }
+}
+
+@media (max-width: $desktop) {
+  .nav {
+    nav {
+      display: none;
+    }
+
+    &__hamburger {
+      display: block;
+      border: none;
+      background: none;
+    }
   }
 }

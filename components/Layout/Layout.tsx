@@ -15,13 +15,7 @@ const Layout = ({ leftContent, rightContent, motionProps }: LayoutProps) => {
       <Navbar />
       <motion.div {...motionProps}>
         <div className={styles.layout}>
-          <div
-            className={`${styles.layout__left} ${
-              leftContent === null && "hidden"
-            }`}
-          >
-            {leftContent}
-          </div>
+          <div className={styles.layout__left}>{leftContent}</div>
           <div className={styles.layout__right}>{rightContent}</div>
         </div>
       </motion.div>
