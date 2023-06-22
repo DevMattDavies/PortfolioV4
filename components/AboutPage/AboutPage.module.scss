@@ -1,3 +1,46 @@
+@import "styles/_variables";
+@import "styles/_mixins";
+
 .about {
-  min-height: 100vh;
+  &__image__container {
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  &__image {
+    display: block;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+  }
+
+  &__title {
+    @include navLinks(3rem);
+    @include navUnderline($about-gradient);
+  }
+
+  &__text {
+    @include bodyText();
+  }
+
+  &__contact {
+    @include bodyText();
+    color: var(--get-in-touch);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+  }
 }

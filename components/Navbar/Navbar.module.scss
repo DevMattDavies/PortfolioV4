@@ -4,9 +4,11 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   background-color: var(--background);
-  padding: $desktop-padding;
+  height: $navbar-height;
+  padding: $navbar-padding;
 
   &__link {
     @include navLinks(3rem);

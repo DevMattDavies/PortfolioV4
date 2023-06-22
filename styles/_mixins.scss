@@ -1,3 +1,5 @@
+@import "styles/_variables";
+
 @mixin homeUnderline($gradient) {
   &:after {
     content: "";
@@ -44,14 +46,21 @@
 
 @mixin navLinks($font-size) {
   font-size: $font-size;
-  font-family: "Oswald", sans-serif;
+  font-family: $link-font, sans-serif;
   color: var(--font);
   text-transform: uppercase;
   position: relative;
   padding: 0 1rem;
   z-index: 1;
+  width: max-content;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+@mixin bodyText() {
+  font-size: 1.2rem;
+  font-family: $body-font, sans-serif;
+  color: var(--font);
 }
