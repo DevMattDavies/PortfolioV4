@@ -32,7 +32,7 @@ export const HomePage = (): ReactElement | null => {
       initial="hidden"
       animate="show"
       exit="exit"
-      className={`${styles.homepage}`}
+      className={styles.homepage}
     >
       <motion.div
         className={styles.homepage__nav}
